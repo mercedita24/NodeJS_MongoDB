@@ -9,8 +9,25 @@ const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: false})) //se le agregan los middelware
 app.use(bodyParser.json())
 
-app.get('/hola/:name', (req, res) => {
-    res.send({message: `Hola ${req.params.name}`}) //Get con parametros
+app.get('/api/product', (req, res) => { //(peticion , respuesta)
+    res.status(200).send({products:[]}) //Get de productos
+})
+
+app.get('/api/product/:productId', (req, res) => { 
+    
+})
+
+app.post('/api/product', (req, res) => { 
+    console.log(req.body)
+    res.status(200).send({message: 'El producto se ha recibido'})
+})
+
+app.put('/api/product/:productId', (req, res) => { 
+    
+})
+
+app.delete('/api/product/:productId', (req, res) => { 
+    
 })
 
 
